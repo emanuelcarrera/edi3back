@@ -3,7 +3,35 @@
 
 class UsuariosController{
 
-public function CargarUsuario($nombre,$pass,$apellido,$telefono){
+
+
+public function Alta($request, $response, $args){
+
+    $usr=  new Usuarios();
+
+    
+
+    return $response;
+}
+
+public function Baja($request, $response, $args){
+
+    $usr=  new Usuarios();
+
+    
+
+    return $response;
+}
+
+public function Modificacion($request, $response, $args){
+
+    $usr=  new Usuarios();
+
+    
+
+    return $response;
+}
+public function Listar($request, $response, $args){
 
     $usr=  new Usuarios();
 
@@ -14,12 +42,16 @@ public function CargarUsuario($nombre,$pass,$apellido,$telefono){
 
 public function Login($request, $response, $args){
     
-    $nombre = $args['nombre'];
-    $pass = $args['pass'];
 
-    $valido =  json_decode(Archivos::leerArchivo('uploads/Dpto'.$provinciaId.'.json'));
+    $response->getBody()->Write("ldlfd");
+    //$nombre = $args['nombre'];
+    //$pass = $args['pass'];
+
+    // $valido =  json_decode(Archivos::leerArchivo('uploads/Dpto'.$provinciaId.'.json'));
 
     return $response;
+
+    
 }
 
 

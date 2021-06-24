@@ -22,7 +22,7 @@ require __DIR__ . '/entidades/Usuarios.php';
 $app = AppFactory::create();
 // Add error middleware
 $app->addErrorMiddleware(true, true, true);
-header('Access-Control-Allow-Origin:*');
+//header('Access-Control-Allow-Origin:*');
 // Enable CORS
 $app->add(function (Request $request, RequestHandlerInterface $handler): Response {
     // $routeContext = RouteContext::fromRequest($request);
@@ -44,8 +44,12 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 });
 
 
-$app->group('/Usarios', function (RouteCollectorProxy $group) {
-    $group->post('/Login', \usuariosController::class . ':LeerJSONPost' );
+$app->group('/Usuarios', function (RouteCollectorProxy $group) {
+    $group->post('/Login', \usuariosController::class . ':Login' );
+    $group->post('/Alta', \usuariosController::class . ':LeerJSONPost' );
+    $group->post('/Baja', \usuariosController::class . ':LeerJSONPost' );
+    $group->post('/Modificacion', \usuariosController::class . ':LeerJSONPost' );
+    $group->post('/Listar', \usuariosController::class . ':LeerJSONPost' );
 });
 
 $app->run();
