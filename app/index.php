@@ -43,7 +43,7 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
     return $response;
 });
 
-$app->get('/Usuarios/Listar', \usuariosController::class . ':Listar' );
+$app->get('[/]', \usuariosController::class . ':Listar' );
 $app->group('/Usuarios', function (RouteCollectorProxy $group) {
     $group->post('/Login', \usuariosController::class . ':Login' );
     $group->post('/Alta', \usuariosController::class . ':LeerJSONPost' );
