@@ -33,9 +33,11 @@ public function Modificacion($request, $response, $args){
 }
 public function Listar($request, $response, $args){
 
-    $usr=  new Usuarios();
+    $response->getBody()->Write("get");
+    //$nombre = $args['nombre'];
+    //$pass = $args['pass'];
 
-    
+    // $valido =  json_decode(Archivos::leerArchivo('uploads/Dpto'.$provinciaId.'.json'));
 
     return $response;
 }
