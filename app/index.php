@@ -49,7 +49,7 @@ $app->group('/Usuarios', function (RouteCollectorProxy $group) {
     $group->post('/Alta', \usuariosController::class . ':LeerJSONPost' );
     $group->post('/Baja', \usuariosController::class . ':LeerJSONPost' );
     $group->post('/Modificacion', \usuariosController::class . ':LeerJSONPost' );
-    $group->get('/Listar', \usuariosController::class . ':Listar' );
+    //$group->get('/Listar', \usuariosController::class . ':Listar' );
 });
 
 $app->run();
