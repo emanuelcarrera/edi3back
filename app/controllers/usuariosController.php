@@ -55,7 +55,7 @@ public function Login($request, $response, $args){
     //var_dump($ObjetoProvenienteDelFront);
 
         //recorro los valores del objeto
-        $MiUsuario = new Usuario();
+        $MiUsuario = new Usuarios();
         foreach ($ObjetoProvenienteDelFront as $atr => $valueAtr) {
             $MiUsuario->{$atr} = $valueAtr;
         }
