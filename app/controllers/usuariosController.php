@@ -45,13 +45,15 @@ public function Listar($request, $response, $args){
 public function Login($request, $response, $args){
     $valor =  $args['param'];
    
-    $response->getBody()->Write($valor);
+    //$response->getBody()->Write($valor);
     //objeto enviado via FormData
      //$listaDeParametros = $request->getParsedBody();
      //$response->getBody()->Write($listaDeParametros['pass']);
     //El dato llega por el body como texto
+  
     $ObjetoProvenienteDelFront =  json_decode($request->getBody());
     //var_dump($ObjetoProvenienteDelFront);
+
         //recorro los valores del objeto
         $MiUsuario = new Usuario();
         foreach ($ObjetoProvenienteDelFront as $atr => $valueAtr) {
@@ -59,13 +61,7 @@ public function Login($request, $response, $args){
         }
 
 
-    //$response->getBody()->Write(json_encode($MiUsuario));
-
-    // $response->getBody()->Write("ldlfd");
-    //$nombre = $args['nombre'];
-    //$pass = $args['pass'];
-
-    // $valido =  json_decode(Archivos::leerArchivo('uploads/Dpto'.$provinciaId.'.json'));
+    $response->getBody()->Write(json_encode($MiUsuario));
 
     return $response;
 
