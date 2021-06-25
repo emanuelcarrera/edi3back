@@ -43,9 +43,25 @@ public function Listar($request, $response, $args){
 }
 
 public function Login($request, $response, $args){
-    
+    $valor =  $args['param'];
+   
+    $response->getBody()->Write($valor);
+    //objeto enviado via FormData
+     //$listaDeParametros = $request->getParsedBody();
+     //$response->getBody()->Write($listaDeParametros['pass']);
+    //El dato llega por el body como texto
+    $ObjetoProvenienteDelFront =  json_decode($request->getBody());
+    //var_dump($ObjetoProvenienteDelFront);
+        //recorro los valores del objeto
+        $MiUsuario = new Usuario();
+        foreach ($ObjetoProvenienteDelFront as $atr => $valueAtr) {
+            $MiUsuario->{$atr} = $valueAtr;
+        }
 
-    $response->getBody()->Write("ldlfd");
+
+    //$response->getBody()->Write(json_encode($MiUsuario));
+
+    // $response->getBody()->Write("ldlfd");
     //$nombre = $args['nombre'];
     //$pass = $args['pass'];
 
