@@ -46,10 +46,9 @@ public function Login($request, $response, $args){
      
     //$listabody = $request->getParseBody();
 
-    $response->getBody()->Write('hola');
+     $listaDeParametros = $request->getParsedBody();
+     $response->getBody()->Write($listaDeParametros['pass']);
      
-
- 
     return $response;
 
     
