@@ -17,9 +17,9 @@ public function Alta($request, $response, $args){
    // $usr->pass =  $listaDeParametros['Edad'];
    // $usr->pass =  $listaDeParametros['Descripcion'];
 
-    $response = Usuarios::CrearUsuario();
+    Usuarios::CrearUsuario();
 
-    return $response;
+    return 'hola';
 }
 
 public function Baja($request, $response, $args){
