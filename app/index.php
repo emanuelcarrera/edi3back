@@ -44,9 +44,9 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 });
 
 $app->get('[/]', \usuariosController::class . ':Listar' );
-$app->get('/Usuario[/]', \usuariosController::class . ':Listar' );
+$app->get('/Usuarios[/]', \usuariosController::class . ':Listar' );
 $app->group('/Usuarios', function (RouteCollectorProxy $group) {
-    $group->post('/Login/{param}[/]', \usuariosController::class . ':Login' );
+    $group->post('/Login', \usuariosController::class . ':Login' );
     $group->post('/Alta', \usuariosController::class . ':LeerJSONPost' );
     $group->post('/Baja', \usuariosController::class . ':LeerJSONPost' );
     $group->post('/Modificacion', \usuariosController::class . ':LeerJSONPost' );
