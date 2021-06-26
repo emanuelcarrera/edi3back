@@ -9,7 +9,15 @@ public function Alta($request, $response, $args){
 
     $usr=  new Usuarios();
 
-    
+    $listaDeParametros = $request->getParsedBody();
+    $usr->pass =  $listaDeParametros['NUsuario'];
+    $usr->pass =  $listaDeParametros['pass'];
+    $usr->pass =  $listaDeParametros['Nombre'];
+    $usr->pass =  $listaDeParametros['Apellido'];
+    $usr->pass =  $listaDeParametros['Edad'];
+    $usr->pass =  $listaDeParametros['Descripcion'];
+
+    $response = Usuarios::CrearUsuario();
 
     return $response;
 }
@@ -48,7 +56,7 @@ public function Login($request, $response, $args){
 
      $listaDeParametros = $request->getParsedBody();
      $response->getBody()->Write($listaDeParametros['pass']);
-     
+
     return $response;
 
     
