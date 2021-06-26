@@ -62,7 +62,7 @@ public function Login($request, $response, $args){
 
 
     $response->getBody()->Write(json_encode($MiUsuario));
-
+    $response= $valor ;
     return $response;
 
     
