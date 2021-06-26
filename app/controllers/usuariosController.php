@@ -44,9 +44,9 @@ public function Listar($request, $response, $args){
 
 public function Login($request, $response, $args){
      
-    $listabody = $request->getParseBody();
+    //$listabody = $request->getParseBody();
 
-    $response->getBody()->Write($listabody['pass']);
+    $response->getBody()->Write('hola');
      
 
  
