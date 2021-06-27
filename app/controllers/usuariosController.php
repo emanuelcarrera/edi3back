@@ -17,7 +17,7 @@ public function Alta($request, $response, $args){
    // $usr->pass =  $listaDeParametros['Edad'];
    // $usr->pass =  $listaDeParametros['Descripcion'];
 
-     $response=  Usuarios::CrearUsuario();
+     $response=  $usr->CrearUsuario();
 
     return 'hola';
 }
