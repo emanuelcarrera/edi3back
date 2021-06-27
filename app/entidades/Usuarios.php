@@ -8,17 +8,17 @@ class Usuarios {
     public $edad;
     public $Descripcion;
     
-public function CrearUsuario()
+public function CrearUsuario($usr)
 {
-    
+
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`NumbreUsuario`, `pass`, `nombre`, `Apellido`, `edad`, `Descripcion`) VALUES ('Usuario1','1234','Primer','Usario','29','Primer usaurio de prueba')");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`NumbreUsuario`, `pass`, `nombre`, `Apellido`, `edad`, `Descripcion`) VALUES (`$usr->nombreUsuario`, `$usr->pass`, `$usr->nombre`, `$usr->papellido`, `$usr->edad`, `$usr->Descripcion`)");
     
     $this->autor;
     $consulta->execute();
 
-    return 'crago';
+    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
 }
    
 

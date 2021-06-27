@@ -9,15 +9,15 @@ public function Alta($request, $response, $args){
 
     $usr=  new Usuarios();
 
-   // $listaDeParametros = $request->getParsedBody();
-   // $usr->pass =  $listaDeParametros['NUsuario'];
-   // $usr->pass =  $listaDeParametros['pass'];
-   // $usr->pass =  $listaDeParametros['Nombre'];
-   // $usr->pass =  $listaDeParametros['Apellido'];
-   // $usr->pass =  $listaDeParametros['Edad'];
-   // $usr->pass =  $listaDeParametros['Descripcion'];
+    $listaDeParametros = $request->getParsedBody();
+    $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
+    $usr->pass =  $listaDeParametros['pass'];
+    $usr->nombre =  $listaDeParametros['Nombre'];
+    $usr->papellido =  $listaDeParametros['Apellido'];
+    $usr->edad =  $listaDeParametros['Edad'];
+    $usr->Descripcion =  $listaDeParametros['Descripcion'];
 
-     $response=  $usr->CrearUsuario();
+     $response =  $usr->CrearUsuario($usr);
 
     return 'hola';
 }
