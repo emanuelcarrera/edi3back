@@ -19,7 +19,7 @@ public function Alta($request, $response, $args){
 
      $response =  $usr->CrearUsuario($usr);
 
-    return 'hola';
+    return $response ;
 }
 
 public function Baja($request, $response, $args){
