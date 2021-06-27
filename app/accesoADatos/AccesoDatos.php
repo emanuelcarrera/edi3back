@@ -11,7 +11,7 @@ class AccesoDatos
        //
        
        //$this->objetoPDO = new PDO('mysql:host='.getenv('ServidorMySQL').';dbname='.getenv('Database').';charset=utf8', getenv("Usuario"), getenv('Pass'), array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $this->objetoPDO = new PDO('mysql:host=@dbfree.net;dbname=edi3colecciones;charset=utf8', 'emanuel2', 'Edi3Base');
+        $this->objetoPDO = new PDO('mysql:host=db4free.net;dbname=edi3colecciones;charset=utf8', 'emanuel2', 'Edi3Base');
             $this->objetoPDO->exec("SET CHARACTER SET utf8");
         } catch (PDOException $e) {
             print "Error: " . $e->getMessage();
