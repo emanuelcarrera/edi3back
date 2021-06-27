@@ -13,7 +13,7 @@ public function CrearUsuario($usr)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`NumbreUsuario`, `pass`, `nombre`, `Apellido`, `edad`, `Descripcion`) VALUES ('`$usr->nombreUsuario`', '`$usr->pass`', '`$usr->nombre`', '`$usr->papellido`', `25`, '`$usr->Descripcion`')");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`NumbreUsuario`, `pass`, `nombre`, `Apellido`, `Descripcion`) VALUES ('`$usr->nombreUsuario`', '`$usr->pass`', '`$usr->nombre`', '`$usr->papellido`', '`$usr->Descripcion`')");
     
     $this->autor;
     $consulta->execute();
