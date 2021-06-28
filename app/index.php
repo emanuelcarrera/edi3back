@@ -43,14 +43,14 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
     return $response;
 });
 
-$app->get('[/]', \usuariosController::class . ':Listar' );
-$app->get('/Usuarios[/]', \usuariosController::class . ':Listar' );
+//$app->get('[/]', \usuariosController::class . ':Listar' );
+//$app->get('/Usuarios[/]', \usuariosController::class . ':Listar' );
 $app->group('/Usuarios', function (RouteCollectorProxy $group) {
     $group->post('/Login', \usuariosController::class . ':Login' );
     $group->post('/Alta', \usuariosController::class . ':Alta' );
     $group->post('/Baja', \usuariosController::class . ':LeerJSONPost' );
     $group->post('/Modificacion', \usuariosController::class . ':LeerJSONPost' );
-    //$group->get('/Listar', \usuariosController::class . ':Listar' );
+    $group->get('/Listar', \usuariosController::class . ':Listar' );
 });
 
 $app->run();
