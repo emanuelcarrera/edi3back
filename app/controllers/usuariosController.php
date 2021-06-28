@@ -41,13 +41,12 @@ public function Modificacion($request, $response, $args){
 }
 public function Listar($request, $response, $args){
 
-    $response->getBody()->Write("get");
-    //$nombre = $args['nombre'];
-    //$pass = $args['pass'];
+        
+   $arrayUsuarios = Usuarios::TodosLosUsaurios();
+   $response->getBody()->Write(json_encode($arrayUsuarios));
+ 
 
-    // $valido =  json_decode(Archivos::leerArchivo('uploads/Dpto'.$provinciaId.'.json'));
-
-    return $response;
+  return $response ->withHeader('Content-Type', 'application/json');
 }
 
 public function Login($request, $response, $args){

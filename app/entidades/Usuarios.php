@@ -21,6 +21,19 @@ public function CrearUsuario($usr)
     return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
 }
    
+public function TodosLosUsaurios()
+{
+
+
+    $objAccesoDatos = AccesoDatos::obtenerInstancia();
+    $consulta = $objAccesoDatos->prepararConsulta("select * from `usuarios`");
+    
+    $this->autor;
+    $consulta->execute();
+
+    return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
+}
+
 
 }
 
