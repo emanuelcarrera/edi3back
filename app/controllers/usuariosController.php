@@ -41,8 +41,8 @@ public function Modificacion($request, $response, $args){
 }
 public function Listar($request, $response, $args){
 
-        
-   $arrayUsuarios = Usuarios::TodosLosUsaurios();
+   $usr=  new Usuarios();
+   $arrayUsuarios = $usr->TodosLosUsaurios();
    $response = (json_encode($arrayUsuarios));
  
 
