@@ -43,10 +43,10 @@ public function Listar($request, $response, $args){
 
         
    $arrayUsuarios = Usuarios::TodosLosUsaurios();
-   $response->getBody()->Write(json_encode($arrayUsuarios));
+   $response = (json_encode($arrayUsuarios));
  
 
-  return $response ->withHeader('Content-Type', 'application/json');
+  return $response;
 }
 
 public function Login($request, $response, $args){
