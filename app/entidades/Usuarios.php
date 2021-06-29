@@ -28,7 +28,7 @@ public function TodosLosUsaurios()
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
     $consulta = $objAccesoDatos->prepararConsulta("select * from `usuarios`");
     
-    $this->autor;
+    // $this->autor;
     $consulta->execute();
 
     return $consulta->fetchAll();
