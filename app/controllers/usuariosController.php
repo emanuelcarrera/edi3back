@@ -46,7 +46,7 @@ public function Listar($request, $response, $args){
    $response = (json_encode($arrayUsuarios));
  
 
-  return $response;
+  return $response->withHeader('Content-Type', 'application/json');
 }
 
 public function Login($request, $response, $args){
