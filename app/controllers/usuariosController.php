@@ -25,8 +25,10 @@ public function Alta($request, $response, $args){
 public function Baja($request, $response, $args){
 
     $usr=  new Usuarios();
+    $listaDeParametros = $request->getParsedBody();
+    $usr->idUsuario =  $listaDeParametros['idUsuario'];
 
-    
+    $response =  $usr->CrearUsuario($usr);
 
     return $response;
 }

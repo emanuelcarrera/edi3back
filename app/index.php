@@ -48,8 +48,8 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 $app->group('/Usuarios', function (RouteCollectorProxy $group) {
     $group->post('/Login', \usuariosController::class . ':Login' );
     $group->post('/Alta', \usuariosController::class . ':Alta' );
-    $group->post('/Baja', \usuariosController::class . ':LeerJSONPost' );
-    $group->post('/Modificacion', \usuariosController::class . ':LeerJSONPost' );
+    $group->post('/Baja', \usuariosController::class . ':Baja' );
+    $group->post('/Modificacion', \usuariosController::class . ':Modificacion' );
     $group->get('/Listar', \usuariosController::class . ':Listar' );
     $group->POST('/Listar', \usuariosController::class . ':Listar' );
 });
