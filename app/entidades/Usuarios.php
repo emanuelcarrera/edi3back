@@ -31,7 +31,7 @@ public function TodosLosUsaurios()
     // $this->autor;
     $consulta->execute();
 
-    return $consulta->fetchAll();
+    return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
 }
 
 
