@@ -43,7 +43,7 @@ public function Listar($request, $response, $args){
 
    $usr=  new Usuarios();
    $arrayUsuarios = $usr->TodosLosUsaurios();
-   $response = (json_encode($arrayUsuarios));
+   $response ->getBody()->Write(json_encode($arrayUsuarios));
  
 
   return $response->withHeader('Content-Type', 'application/json');
