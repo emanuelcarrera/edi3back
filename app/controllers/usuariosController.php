@@ -28,7 +28,7 @@ public function Baja($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
     $usr->idUsuario =  $listaDeParametros['idUsuario'];
 
-    $response =  $usr->CrearUsuario($usr);
+    $response =  $usr->EliminarUsuario($usr);
 
     return $response;
 }
