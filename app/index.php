@@ -51,6 +51,7 @@ $app->group('/Usuarios', function (RouteCollectorProxy $group) {
     $group->post('/Baja', \usuariosController::class . ':LeerJSONPost' );
     $group->post('/Modificacion', \usuariosController::class . ':LeerJSONPost' );
     $group->get('/Listar', \usuariosController::class . ':Listar' );
+    $group->POST('/Listar', \usuariosController::class . ':Listar' );
 });
 
 $app->run();
