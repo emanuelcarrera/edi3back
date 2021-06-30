@@ -39,7 +39,7 @@ public function Modificacion($request, $response, $args){
 
     
     $listaDeParametros = $request->getParsedBody();
-    $usr->nombreUsuario =  $listaDeParametros['idUsuario'];
+    $usr->idUsuario =  $listaDeParametros['idUsuario'];
     $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
     $usr->pass =  $listaDeParametros['pass'];
     $usr->nombre =  $listaDeParametros['Nombre'];
