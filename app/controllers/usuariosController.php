@@ -59,11 +59,11 @@ public function Login($request, $response, $args){
     $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
     $usr->pass =  $listaDeParametros['pass'];
 
-    $usr =$usr->Login($usr);
+    $usuario =$usr->Login($usr);
 
-    if ($usr->idUsuario > 0)
+    if ($usuario[0]->idUsuario <>null)
     {
-    $response ->getBody()->Write(json_encode($usr));
+    $response ->getBody()->Write(json_encode($usuario));
     $response =  $response->getBody()->Write("OK");
     }
     else {
