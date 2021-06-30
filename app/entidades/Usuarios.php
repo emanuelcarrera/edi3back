@@ -14,8 +14,7 @@ public function CrearUsuario($usr)
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
     $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`nombreUsuario`, `pass`, `nombre`, `Apellido`, `edad` ,`Descripcion`) VALUES ('$usr->nombreUsuario', '$usr->pass', '$usr->nombre', '$usr->papellido',$usr->edad ,'$usr->Descripcion')");
-    
-    $this->autor;
+  
     $consulta->execute();
 
     return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
