@@ -59,8 +59,9 @@ public function Login($request, $response, $args){
     $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
     $usr->pass =  $listaDeParametros['pass'];
 
-    $Usuario =$usr->Login($usr);
-    if ($Usuario->rowCount() > 0)
+    $usr =$usr->Login($usr);
+
+    if ($Usuario->idUsuario > 0)
     {
     $response ->getBody()->Write(json_encode($Usuario));
     $response =  $response->getBody()->Write("OK");
