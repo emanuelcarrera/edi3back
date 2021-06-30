@@ -17,7 +17,7 @@ public function Alta($request, $response, $args){
     $usr->edad =  $listaDeParametros['Edad'];
     $usr->Descripcion =  $listaDeParametros['Descripcion'];
     $usr->CrearUsuario($usr);
-    $response =  $response->getBody()->Write("Creado");
+    $response->getBody()->Write("Creado");
     
     return $response ;
 }
@@ -47,7 +47,7 @@ public function Modificacion($request, $response, $args){
     $usr->edad =  $listaDeParametros['Edad'];
     $usr->Descripcion =  $listaDeParametros['Descripcion'];
     $usr->UpdateUsuario($usr);
-    $response =  $response->getBody()->Write("Creado");
+    $response->getBody()->Write("Creado");
     
 
     return $response;
