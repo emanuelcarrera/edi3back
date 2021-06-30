@@ -59,19 +59,10 @@ public function Login($request, $response, $args){
     $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
     $usr->pass =  $listaDeParametros['pass'];
 
-    $usuario =$usr->Login($usr);
+    $id =$usr->Login($usr);
 
-    if ($usuario[0]->idUsuario <> 0)
-    {
-           $response ->getBody()->Write(json_encode($usuario));
-           //$response->getBody()->Write("OK");
-           return $response->withHeader('Content-Type', 'application/json');
-    }
-    else 
-    {
-        $response->getBody()->Write("Usuario o contraseña incorrecta");
-    }
-   
+  
+    $response->getBody()->Write($id);
 
 
 

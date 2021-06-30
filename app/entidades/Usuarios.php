@@ -72,7 +72,7 @@ public function Login($usr)
     $consulta->execute();
     if( $consulta->rowCount() ==1)
     {
-       return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
+       return $consulta->fetch();
     }
     else 
     {
