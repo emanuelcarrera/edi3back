@@ -60,16 +60,20 @@ public function Login($request, $response, $args){
     $usr->pass =  $listaDeParametros['pass'];
 
     $usuario =$usr->Login($usr);
-    try {
-        if ($usuario[0]->idUsuario <> null)
-        {
+
+    if ($usuario[0]->idUsuario <> 0)
+    {
            $response ->getBody()->Write(json_encode($usuario));
            //$response->getBody()->Write("OK");
            return $response->withHeader('Content-Type', 'application/json');
     }
-    } catch (\Throwable $th) {
+    else 
+    {
         $response->getBody()->Write("Usuario o contraseña incorrecta");
     }
+   
+
+
 
 
     return $response;

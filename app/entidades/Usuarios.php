@@ -70,8 +70,21 @@ public function Login($usr)
     
     // $this->autor;
     $consulta->execute();
+    if( $consulta->rowCount() ==1)
+    {
+       return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
+    }
+    else 
+    {
+        $consulta = $objAccesoDatos->prepararConsulta("select  0 as nombreUsuario  from usuarios");
+        $consulta->execute();
 
-    return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
+        return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
+
+    }
+    
+
+
 }
 
 
