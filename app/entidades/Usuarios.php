@@ -13,7 +13,7 @@ public function CrearUsuario($usr)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`NumbreUsuario`, `pass`, `nombre`, `Apellido`, `edad` ,`Descripcion`) VALUES ('$usr->nombreUsuario', '$usr->pass', '$usr->nombre', '$usr->papellido',$usr->edad ,'$usr->Descripcion')");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `usuarios`(`nombreUsuario`, `pass`, `nombre`, `Apellido`, `edad` ,`Descripcion`) VALUES ('$usr->nombreUsuario', '$usr->pass', '$usr->nombre', '$usr->papellido',$usr->edad ,'$usr->Descripcion')");
     
     $this->autor;
     $consulta->execute();
@@ -27,7 +27,7 @@ public function UpdateUsuario($usr)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("UPDATE `usuarios` SET `NumbreUsuario` =  '$usr->nombreUsuario'  , `pass` = '$usr->pass' , `nombre` = '$usr->nombre' , `Apellido` = '$usr->papellido', `edad` = $usr->edad  ,`Descripcion` = '$usr->Descripcion' WHERE `idUsuario` = $usr->idUsuario");
+    $consulta = $objAccesoDatos->prepararConsulta("UPDATE `usuarios` SET `nombreUsuario` =  '$usr->nombreUsuario'  , `pass` = '$usr->pass' , `nombre` = '$usr->nombre' , `Apellido` = '$usr->papellido', `edad` = $usr->edad  ,`Descripcion` = '$usr->Descripcion' WHERE `idUsuario` = $usr->idUsuario");
     
     $this->autor;
     $consulta->execute();
@@ -66,7 +66,7 @@ public function Login($usr)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("SELECT * from `usuarios` WHERE `NumbreUsuario` = '$usr->nombreUsuario' AND `pass` = '$usr->pass' ");
+    $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `usuarios` WHERE `nombreUsuario` = '$usr->nombreUsuario' AND `pass` = '$usr->pass' ");
     
     // $this->autor;
     $consulta->execute();
