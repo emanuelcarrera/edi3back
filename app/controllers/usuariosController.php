@@ -16,9 +16,9 @@ public function Alta($request, $response, $args){
     $usr->papellido =  $listaDeParametros['Apellido'];
     $usr->edad =  $listaDeParametros['Edad'];
     $usr->Descripcion =  $listaDeParametros['Descripcion'];
-
-     $response =  $usr->CrearUsuario($usr);
-
+    $usr->CrearUsuario($usr);
+    $response =  $response->getBody()->Write("Creado");
+    
     return $response ;
 }
 
@@ -53,12 +53,23 @@ public function Listar($request, $response, $args){
 
 public function Login($request, $response, $args){
      
-    //$listabody = $request->getParseBody();
+    $usr=  new Usuarios();
 
-     $listaDeParametros = $request->getParsedBody();
-     $response->getBody()->Write($listaDeParametros['pass']);
+    $listaDeParametros = $request->getParsedBody();
+    $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
+    $usr->pass =  $listaDeParametros['pass'];
 
-    return $response;
+    $Usuario =$usr->Login($usr);
+    if ($Usuario->rowCount() > 0)
+    {
+    $response ->getBody()->Write(json_encode($Usuario));
+    $response =  $response->getBody()->Write("OK");
+    }
+    else {
+        $response =  $response->getBody()->Write("Usuario o contraseña incorrecta");
+    }
+    
+    return $response ;
 
     
 }
