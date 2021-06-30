@@ -63,11 +63,11 @@ public function Login($request, $response, $args){
 
     if ($usuario[0]->idUsuario <>null)
     {
-    $response ->getBody()->Write(json_encode($usuario));
-    $response =  $response->getBody()->Write("OK");
+      // $response ->getBody()->Write(json_encode($usuario));
+       $response->getBody()->Write("OK");
     }
     else {
-        $response =  $response->getBody()->Write("Usuario o contraseña incorrecta");
+       $response->getBody()->Write("Usuario o contraseña incorrecta");
     }
     
     return $response ;
