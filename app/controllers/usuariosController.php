@@ -38,6 +38,18 @@ public function Modificacion($request, $response, $args){
     $usr=  new Usuarios();
 
     
+    $listaDeParametros = $request->getParsedBody();
+    $usr->nombreUsuario =  $listaDeParametros['idUsuario'];
+    $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
+    $usr->pass =  $listaDeParametros['pass'];
+    $usr->nombre =  $listaDeParametros['Nombre'];
+    $usr->papellido =  $listaDeParametros['Apellido'];
+    $usr->edad =  $listaDeParametros['Edad'];
+    $usr->Descripcion =  $listaDeParametros['Descripcion'];
+    $usr->UpdateUsuario($usr);
+    $response =  $response->getBody()->Write("Creado");
+    
+    return $response ;
 
     return $response;
 }
