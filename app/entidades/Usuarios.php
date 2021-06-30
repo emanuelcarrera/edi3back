@@ -56,7 +56,6 @@ public function EliminarUsuario($usr)
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
     $consulta = $objAccesoDatos->prepararConsulta("DELETE FROM `usuarios` WHERE `idUsuario` = $usr->idUsuario  ");
     
-    $this->autor;
     $consulta->execute();
 
     return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
