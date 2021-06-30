@@ -49,7 +49,6 @@ public function Modificacion($request, $response, $args){
     $usr->UpdateUsuario($usr);
     $response =  $response->getBody()->Write("Creado");
     
-    return $response ;
 
     return $response;
 }
