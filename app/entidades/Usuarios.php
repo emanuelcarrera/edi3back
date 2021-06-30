@@ -29,7 +29,7 @@ public function UpdateUsuario($usr)
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
     $consulta = $objAccesoDatos->prepararConsulta("UPDATE `usuarios` SET `nombreUsuario` =  '$usr->nombreUsuario'  , `pass` = '$usr->pass' , `nombre` = '$usr->nombre' , `Apellido` = '$usr->papellido', `edad` = $usr->edad  ,`Descripcion` = '$usr->Descripcion' WHERE `idUsuario` = $usr->idUsuario");
     
-    $this->autor;
+   
     $consulta->execute();
 
     return $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
