@@ -61,9 +61,9 @@ public function Login($request, $response, $args){
 
     $usr =$usr->Login($usr);
 
-    if ($Usuario->idUsuario > 0)
+    if ($usr->idUsuario > 0)
     {
-    $response ->getBody()->Write(json_encode($Usuario));
+    $response ->getBody()->Write(json_encode($usr));
     $response =  $response->getBody()->Write("OK");
     }
     else {
