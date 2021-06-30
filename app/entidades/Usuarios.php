@@ -66,7 +66,7 @@ public function Login($usr)
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("SELECT * from `usuarios` WHERE `idUsuario` = $usr->idUsuario AND `pass` = $usr->pass ");
+    $consulta = $objAccesoDatos->prepararConsulta("SELECT * from `usuarios` WHERE `NumbreUsuario` = '$usr->nombreUsuario' AND `pass` = '$usr->pass' ");
     
     // $this->autor;
     $consulta->execute();
