@@ -28,8 +28,8 @@ public function Baja($request, $response, $args){
     $listaDeParametros = $request->getParsedBody();
     $usr->idUsuario =  $listaDeParametros['idUsuario'];
 
-    $response =  $usr->EliminarUsuario($usr);
-
+    $usr->EliminarUsuario($usr);
+    $response->getBody()->Write("Eliminado");
     return $response;
 }
 
