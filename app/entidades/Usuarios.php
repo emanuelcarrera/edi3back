@@ -64,7 +64,6 @@ public function EliminarUsuario($usr)
 public function Login($usr)
 {
 
-
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
     $consulta = $objAccesoDatos->prepararConsulta("SELECT `idUsuario`  FROM `usuarios` WHERE `nombreUsuario` = '$usr->nombreUsuario' AND `pass` = '$usr->pass' ");
     
@@ -83,8 +82,6 @@ public function Login($usr)
 
     }
     
-
-
 }
 
 
