@@ -14,7 +14,7 @@ public function Alta($request, $response, $args){
     $Art->Descripcion =  $listaDeParametros['Descripcion'];
     $Art->idUsuario =  $listaDeParametros['idUsuario'];
     $Art->foto =  $listaDeParametros['foto'];
-    $usr->CrearUsuario($usr);
+    $Art->CrearArticulo($Art);
     $response->getBody()->Write("Creado");
     
     return $response ;
@@ -24,9 +24,9 @@ public function Baja($request, $response, $args){
 
     $Art=  new Articulos();
     $listaDeParametros = $request->getParsedBody();
-    $usr->idUsuario =  $listaDeParametros['idUsuario'];
+    $usr->idUsuario =  $listaDeParametros['idArticulo'];
 
-    $usr->EliminarUsuario($usr);
+    $usr->EliminarArticulo($usr);
     $response->getBody()->Write("Eliminado");
     return $response;
 }
