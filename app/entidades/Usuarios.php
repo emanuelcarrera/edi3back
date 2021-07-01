@@ -75,7 +75,7 @@ public function Login($usr)
 
        $usu = $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
 
-    return strval($usu->idUsuario);
+    return strval($usu);
     }
     else
     {
