@@ -17,7 +17,7 @@ public function Alta($request, $response, $args){
     $usr->edad =  $listaDeParametros['Edad'];
     $usr->Descripcion =  $listaDeParametros['Descripcion'];
     $usr->CrearUsuario($usr);
-    $response->getBody()->Write(Alert("Usuario Creado"));
+    $response->getBody()->Write("Usuario Creado");
     
     return $response ;
 }
