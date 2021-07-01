@@ -70,10 +70,10 @@ public function Login($request, $response, $args){
     $usr->nombreUsuario =  $listaDeParametros['NUsuario'];
     $usr->pass =  $listaDeParametros['pass'];
 
-    $usuario =$usr->Login($usr);
+    $id = $usr->Login($usr);
      
     
-    $response->getBody()->Write($usuario->idUsuario);
+    $response->getBody()->Write($id);
     
 
     return $response;

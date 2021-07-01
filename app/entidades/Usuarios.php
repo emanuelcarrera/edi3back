@@ -72,12 +72,12 @@ public function Login($usr)
      
     if($filas>0)
     {
-    return $consulta->fetch(PDO::FETCH_CLASS,'Usuarios');
+    return $consulta->fetch();
     }
     else
     {
 
-        return $usuarios = new Usuarios;
+    return 0;
     }
     
 }
