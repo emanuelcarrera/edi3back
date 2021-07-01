@@ -68,8 +68,17 @@ public function Login($usr)
     
     // $this->autor;
     $consulta->execute();
+    $filas = $consulta->rowCount(); 
+     
+    if($filas>0)
+    {
+    return $consulta->fetch(PDO::FETCH_CLASS,'Usuarios');
+    }
+    else
+    {
 
-    return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios');
+        return $usuarios = new Usuarios;
+    }
     
 }
 

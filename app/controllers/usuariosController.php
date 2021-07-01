@@ -71,11 +71,15 @@ public function Login($request, $response, $args){
     $usr->pass =  $listaDeParametros['pass'];
 
     $usuario =$usr->Login($usr);
+     
+    
+    $response->getBody()->Write($usuario->idUsuario);
+    
 
-  
-     $response ->getBody()->Write(json_encode($usuario));
+    return $response;
+     //$response ->getBody()->Write(json_encode($usuario));
            //$response->getBody()->Write("OK");
-     return $response->withHeader('Content-Type', 'application/json');
+    // return $response->withHeader('Content-Type', 'application/json');
 
 
     
