@@ -75,7 +75,7 @@ public function Login($usr)
 
        $usu = $consulta->fetch();
 
-    return strval($usu->idUsuario);
+    return strval($usu[0]->idUsuario);
     }
     else
     {
