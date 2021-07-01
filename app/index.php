@@ -15,6 +15,8 @@ require __DIR__ . '/accesoADatos/Archivos.php';
 require __DIR__ . '/accesoADatos/AccesoDatos.php';
 require __DIR__ . '/controllers/usuariosController.php';
 require __DIR__ . '/entidades/Usuarios.php';
+require __DIR__ . '/entidades/Articulos.php';
+require __DIR__ . '/controllers/ArticulosController.php';
 
 
 
@@ -52,6 +54,15 @@ $app->group('/Usuarios', function (RouteCollectorProxy $group) {
     $group->post('/Modificacion', \usuariosController::class . ':Modificacion' );
     $group->get('/Listar', \usuariosController::class . ':Listar' );
     $group->POST('/Listar', \usuariosController::class . ':Listar' );
+});
+
+
+
+$app->group('/Articulo', function (RouteCollectorProxy $group) {
+    $group->post('/Alta', \ArticulosController::class . ':Alta' );
+    $group->post('/Baja', \ArticulosController::class . ':Baja' );
+    $group->post('/Modificacion', \ArticulosController::class . ':Modificacion' );
+    $group->POST('/Listar', \ArticulosController::class . ':Listar' );
 });
 
 $app->run();
