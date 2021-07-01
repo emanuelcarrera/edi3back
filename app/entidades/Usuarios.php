@@ -72,12 +72,12 @@ public function Login($usr)
      
     if($filas>0)
     {
-    return $consulta->fetch();
+    return "1";
     }
     else
     {
 
-    return 0;
+    return "0";
     }
     
 }
