@@ -73,7 +73,7 @@ public function Login($usr)
     if($filas>0)
     {
 
-       $usu = $consulta->fetch();
+       $usu = $consulta->fetchAll(PDO::FETCH_CLASS, 'Usuarios');
 
     return strval($usu[0]->idUsuario);
     }
